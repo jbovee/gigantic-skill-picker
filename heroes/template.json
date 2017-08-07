@@ -1,0 +1,236 @@
+{
+	"name" : "",
+	"skills" : [
+		{
+			"id" : "lmb",
+			"name" : "",
+			"description" : ""
+		},
+		{
+			"id" : "rmb",
+			"name" : "",
+			"description" : ""
+		},
+		{
+			"id" : "focus",
+			"name" : "",
+			"description" : ""
+		},
+		{
+			"id" : "q",
+			"name" : "",
+			"description" : ""
+		},
+		{
+			"id" : "e",
+			"name" : "",
+			"description" : ""
+		}
+	],
+	"skill-upgrades" : [
+		[
+			{
+				"id" : "lmb",
+				"position" : "l",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "lmb",
+				"position" : "r",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "lmb",
+				"position" : "ll",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "lmb",
+				"position" : "lr",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "lmb",
+				"position" : "rl",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "lmb",
+				"position" : "rr",
+				"name" : "",
+				"description" : ""
+			}
+		],
+		[
+			{
+				"id" : "rmb",
+				"position" : "l",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "rmb",
+				"position" : "r",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "rmb",
+				"position" : "ll",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "rmb",
+				"position" : "lr",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "rmb",
+				"position" : "rl",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "rmb",
+				"position" : "rr",
+				"name" : "",
+				"description" : ""
+			}
+		],
+		[
+			{
+				"id" : "focus",
+				"position" : "l",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "focus",
+				"position" : "r",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "focus",
+				"position" : "ll",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "focus",
+				"position" : "lr",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "focus",
+				"position" : "rl",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "focus",
+				"position" : "rr",
+				"name" : "",
+				"description" : ""
+			}
+		],
+		[
+			{
+				"id" : "q",
+				"position" : "l",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "q",
+				"position" : "r",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "q",
+				"position" : "ll",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "q",
+				"position" : "lr",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "q",
+				"position" : "rl",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "q",
+				"position" : "rr",
+				"name" : "",
+				"description" : ""
+			}
+		],
+		[
+			{
+				"id" : "e",
+				"position" : "l",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "e",
+				"position" : "r",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "e",
+				"position" : "ll",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "e",
+				"position" : "lr",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "e",
+				"position" : "rl",
+				"name" : "",
+				"description" : ""
+			},
+			{
+				"id" : "e",
+				"position" : "rr",
+				"name" : "",
+				"description" : ""
+			}
+		]
+	],
+	"passives" : [
+		{
+			"name" : "",
+			"description" : ""
+		},
+		{
+			"name" : "",
+			"description" : ""
+		},
+		{
+			"name" : "",
+			"description" : ""
+		}
+	]
+}
