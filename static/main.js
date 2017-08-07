@@ -168,6 +168,21 @@ function skillUpgrades() {
 		.attr("width", "100%")
 		.attr("height", "100%")
 		.attr("display", "block");
+
+	d3.json("/heroes?name=pakko", function(error, data) {
+		svg.selectAll("g.upgrade-tree")
+			.data(data["skill-upgrades"])
+			.enter().append("g")
+			.attr("class", function(d) {
+				return d[0].id + "-upgrade-tree";
+			})
+			.selectAll("g.upgrade")
+			.data(function(d) {return d;})
+			.enter().append("g")
+			.attr("class", function(d) {
+				return d.id + "-upgrade";
+			});
+	});
 }
 
 function skill() {
