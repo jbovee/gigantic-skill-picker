@@ -1,7 +1,13 @@
 from flask import Flask, render_template, jsonify, request
-import os, re
+import os, re, json
 
 app = Flask(__name__, template_folder='')
+
+@app.route("/heroes")
+def heroes():
+	hero = request.args.get('name')
+	with open('heroes/' + hero + '.json') as heroFile:
+		return jsonify(json.load(heroFile))
 
 @app.route("/")
 def index():
