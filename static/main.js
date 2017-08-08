@@ -163,53 +163,11 @@ function skills() {
 }
 
 function skillUpgrades() {
-	var svg = d3.select("#skill-upgrades")
-		.append("svg")
-		.attr("width", "100%")
-		.attr("height", "100%")
-		.attr("display", "block");
-
-	d3.json("/heroes?name=pakko", function(error, data) {
-		svg.selectAll("g.upgrade-tree")
-			.data(data["skill-upgrades"])
-			.enter().append("g")
-			.attr("class", function(d) {
-				return d[0].id + "-upgrade-tree";
-			})
-			.selectAll("g.upgrade")
-			.data(function(d) {return d;})
-			.enter().append("g")
-			.attr("class", function(d) {
-				return d.id + "-upgrade";
-			});
-	});
-}
-
-function skill() {
 	var h = 108.5,
 		hh = h / 2;
 		w = 690.9;
 
-	var upgradeBody = [[hh,0].join(','),
-						[(w + hh),0].join(','),
-						[(w + h),hh].join(','),
-						[(w + hh),h].join(','),
-						[hh,h].join(','),
-						[h,hh].join(',')];
-
-	var upgradeRhomb = [[hh,0].join(','),
-						[h,hh].join(','),
-						[hh,h].join(','),
-						[0,hh].join(',')];
-
-	var upgradeArrow = [[hh,hh-34].join(','),
-						[hh+35,hh].join(','),
-						[hh,hh+34].join(','),
-						[hh,hh+15].join(','),
-						[hh-25,hh+15].join(','),
-						[hh-25,hh-15].join(','),
-						[hh,hh-15].join(',')];
-
+	/*
 	var popup = d3.select("#ui svg").append("g")
 		.attr("width", h + w)
 		.attr("height", h)
@@ -236,31 +194,132 @@ function skill() {
 				.duration(100)
 				.attr("fill", "#01bfa6");
 		});
+	*/
 
-		//.attr("transform", "scale(-1,1)");
+	var rightUpgradeBody = [[hh,0].join(','),
+						[(w + hh),0].join(','),
+						[(w + h),hh].join(','),
+						[(w + hh),h].join(','),
+						[hh,h].join(','),
+						[h,hh].join(',')],
+		rightUpgradeRhomb = [[hh,0].join(','),
+						[h,hh].join(','),
+						[hh,h].join(','),
+						[0,hh].join(',')],
+		rightUpgradeArrow = [[hh,hh-34].join(','),
+						[hh+35,hh].join(','),
+						[hh,hh+34].join(','),
+						[hh,hh+15].join(','),
+						[hh-25,hh+15].join(','),
+						[hh-25,hh-15].join(','),
+						[hh,hh-15].join(',')];
 
-	//	Main popup body
-	popup.append("polygon")
-		.attr("points", function() {
-			return upgradeBody;
-		})
-		.attr("fill", "#010d0b")
-		.attr("fill-opacity", 0.9)
-		.attr("class", "text-area");
+	var leftUpgradeBody = [[hh,0].join(','),
+						[(w + hh),0].join(','),
+						[w,hh].join(','),
+						[(w + hh),h].join(','),
+						[hh,h].join(','),
+						[0,hh].join(',')],
+		leftUpgradeRhomb = [[(w + hh),0].join(','),
+						[(w + h),hh].join(','),
+						[(w + hh),h].join(','),
+						[w,hh].join(',')],
+		leftUpgradeArrow = [[w+hh,hh-34].join(','),
+						[w+hh-35,hh].join(','),
+						[w+hh,hh+34].join(','),
+						[w+hh,hh+15].join(','),
+						[w+hh+25,hh+15].join(','),
+						[w+hh+25,hh-15].join(','),
+						[w+hh,hh-15].join(',')];
 
-	//	Square around arrow
-	popup.append("polygon")
-		.attr("points", function() {
-			return upgradeRhomb;
-		})
-		.attr("fill", "#010d0b")
-		.attr("class", "rhomb");
+	function upgrade(selection,pointLeft) {
+		console.log(pointLeft);
+		//	Main popup body
+		selection.append("polygon")
+			.attr("points", function() {
+				var body = (pointLeft) ? leftUpgradeBody : rightUpgradeBody;
+				return body;
+			})
+			.attr("fill", "#010d0b")
+			.attr("fill-opacity", 0.9)
+			.attr("class", "text-area");
 
-	//	Arrow
-	popup.append("polygon")
-		.attr("points", function() {
-			return upgradeArrow;
-		})
-		.attr("fill", "#01bfa6")
-		.attr("class", "arrow");
+		//	Square around arrow
+		selection.append("polygon")
+			.attr("points", function() {
+				var rhomb = (pointLeft) ? leftUpgradeRhomb : rightUpgradeRhomb;
+				return rhomb;
+			})
+			.attr("fill", "#010d0b")
+			.attr("class", "rhomb");
+
+		//	Arrow
+		selection.append("polygon")
+			.attr("points", function() {
+				var arrow = (pointLeft) ? leftUpgradeArrow : rightUpgradeArrow;
+				return arrow;
+			})
+			.attr("fill", "#01bfa6")
+			.attr("class", "arrow");
+	}
+
+	var upgradePositions = {
+		"l" : {
+			"x" : 75.927,
+			"y" : 146.795,
+			"pointLeft" : true
+		},
+		"r" : {
+			"x" : 967.87,
+			"y" : 146.795,
+			"pointLeft" : false
+		},
+		"ll" : {
+			"x" : 0,
+			"y" : 0,
+			"pointLeft" : true
+		},
+		"lr" : {
+			"x" : 891.943,
+			"y" : 0,
+			"pointLeft" : false
+		},
+		"rl" : {
+			"x" : 79.857,
+			"y" : 0,
+			"pointLeft" : true
+		},
+		"rr" : {
+			"x" : 971.8,
+			"y" : 0,
+			"pointLeft" : false
+		}
+	}
+
+	var svg = d3.select("#skill-upgrades")
+		.append("svg")
+		.attr("width", "100%")
+		.attr("height", "100%")
+		.attr("display", "block");
+
+	d3.json("/heroes?name=pakko", function(error, data) {
+		svg.selectAll("g.upgrade-tree")
+			.data(data["skill-upgrades"])
+			.enter().append("g")
+			.attr("class", function(d) {
+				return d[0].id + " upgrade-tree";
+			})
+			.selectAll("g.upgrade")
+			.data(function(d) {return d;})
+			.enter().append("g")
+			.attr("width", h + w)
+			.attr("height", h)
+			.attr("transform", function(d) {
+				return "translate(" + upgradePositions[d.position].x + " " + upgradePositions[d.position].y + ")";
+			})
+			.each(function(d) {
+				console.log(d.position);
+				upgrade(d3.select(this), upgradePositions[d.position].pointLeft);
+			});
+	});
 }
