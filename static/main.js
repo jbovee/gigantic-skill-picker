@@ -85,7 +85,9 @@ function skills() {
 		skillOpacity = 1;
 
 	//	Skill points
-	svg.append("polygon")
+	svg.append("g")
+		.classed("skill-points", true)
+		.append("polygon")
 		.attr("points", function() {
 			return [[0,startH].join(','),
 					[102.1,startH].join(','),
@@ -96,7 +98,13 @@ function skills() {
 		.attr("fill-opacity", skillOpacity);
 
 	//	LMB
-	svg.append("polygon")
+	svg.append("g")
+		.classed("lmb", true)
+		.on("click", function() {
+			var lmbTree = d3.select("g.lmb-upgrade-tree");
+			lmbTree.classed("invisible", !lmbTree.classed("invisible"));
+		})
+		.append("polygon")
 		.attr("points", function() {
 			return [[140.4,startH].join(','),
 					[229.77,startH].join(','),
@@ -107,7 +115,13 @@ function skills() {
 		.attr("fill-opacity", skillOpacity);
 
 	//	RMB
-	svg.append("polygon")
+	svg.append("g")
+		.classed("rmb", true)
+		.on("click", function() {
+			var lmbTree = d3.select("g.rmb-upgrade-tree");
+			lmbTree.classed("invisible", !lmbTree.classed("invisible"));
+		})
+		.append("polygon")
 		.attr("points", function() {
 			return [[242.5,startH].join(','),
 					[331.89,startH].join(','),
@@ -118,7 +132,13 @@ function skills() {
 		.attr("fill-opacity", skillOpacity);
 
 	//	Focus
-	svg.append("polygon")
+	svg.append("g")
+		.classed("focus", true)
+		.on("click", function() {
+			var lmbTree = d3.select("g.focus-upgrade-tree");
+			lmbTree.classed("invisible", !lmbTree.classed("invisible"));
+		})
+		.append("polygon")
 		.attr("points", function() {
 			return [[348.9,0].join(','),
 					[495.7,0].join(','),
@@ -129,7 +149,13 @@ function skills() {
 		.attr("fill-opacity", skillOpacity);
 
 	//	Q
-	svg.append("polygon")
+	svg.append("g")
+		.classed("q", true)
+		.on("click", function() {
+			var lmbTree = d3.select("g.q-upgrade-tree");
+			lmbTree.classed("invisible", !lmbTree.classed("invisible"));
+		})
+		.append("polygon")
 		.attr("points", function() {
 			return [[513.58,startH].join(','),
 					[602.93,startH].join(','),
@@ -140,7 +166,13 @@ function skills() {
 		.attr("fill-opacity", skillOpacity);
 
 	//	E
-	svg.append("polygon")
+	svg.append("g")
+		.classed("e", true)
+		.on("click", function() {
+			var lmbTree = d3.select("g.e-upgrade-tree");
+			lmbTree.classed("invisible", !lmbTree.classed("invisible"));
+		})
+		.append("polygon")
 		.attr("points", function() {
 			return [[615.7,startH].join(','),
 					[705.05,startH].join(','),
@@ -150,8 +182,14 @@ function skills() {
 		.attr("fill", skillColor)
 		.attr("fill-opacity", skillOpacity);
 
-	//	LVL
-	svg.append("polygon")
+	//	LVL and passive
+	svg.append("g")
+		.classed("passive", true)
+		.on("click", function() {
+			var lmbTree = d3.select("g.passive-upgrade-tree");
+			lmbTree.classed("invisible", !lmbTree.classed("invisible"));
+		})
+		.append("polygon")
 		.attr("points", function() {
 			return [[743.35,startH].join(','),
 					[845.47,startH].join(','),
@@ -163,10 +201,6 @@ function skills() {
 }
 
 function skillUpgrades() {
-	var h = 108.5,
-		hh = h / 2;
-		w = 690.9;
-
 	/*
 	var popup = d3.select("#ui svg").append("g")
 		.attr("width", h + w)
@@ -195,6 +229,14 @@ function skillUpgrades() {
 				.attr("fill", "#01bfa6");
 		});
 	*/
+	var h = 117.856,
+		hh = h / 2,
+		w = 650;
+
+	var arrowPointH = 53.571,
+		arrowPointW = 29.464,
+		arrowBodyH = 23.214,
+		arrowBodyW = 17.857;
 
 	var rightUpgradeBody = [[hh,0].join(','),
 						[(w + hh),0].join(','),
@@ -206,13 +248,13 @@ function skillUpgrades() {
 						[h,hh].join(','),
 						[hh,h].join(','),
 						[0,hh].join(',')],
-		rightUpgradeArrow = [[hh,hh-34].join(','),
-						[hh+35,hh].join(','),
-						[hh,hh+34].join(','),
-						[hh,hh+15].join(','),
-						[hh-25,hh+15].join(','),
-						[hh-25,hh-15].join(','),
-						[hh,hh-15].join(',')];
+		rightUpgradeArrow = [[hh,hh-(arrowPointH/2)].join(','),
+						[hh+arrowPointW,hh].join(','),
+						[hh,hh+(arrowPointH/2)].join(','),
+						[hh,hh+(arrowBodyH/2)].join(','),
+						[hh-arrowBodyW,hh+(arrowBodyH/2)].join(','),
+						[hh-arrowBodyW,hh-(arrowBodyH/2)].join(','),
+						[hh,hh-(arrowBodyH/2)].join(',')];
 
 	var leftUpgradeBody = [[hh,0].join(','),
 						[(w + hh),0].join(','),
@@ -224,16 +266,15 @@ function skillUpgrades() {
 						[(w + h),hh].join(','),
 						[(w + hh),h].join(','),
 						[w,hh].join(',')],
-		leftUpgradeArrow = [[w+hh,hh-34].join(','),
-						[w+hh-35,hh].join(','),
-						[w+hh,hh+34].join(','),
-						[w+hh,hh+15].join(','),
-						[w+hh+25,hh+15].join(','),
-						[w+hh+25,hh-15].join(','),
-						[w+hh,hh-15].join(',')];
+		leftUpgradeArrow = [[w+hh,hh-(arrowPointH/2)].join(','),
+						[w+hh-arrowPointW,hh].join(','),
+						[w+hh,hh+(arrowPointH/2)].join(','),
+						[w+hh,hh+(arrowBodyH/2)].join(','),
+						[w+hh+arrowBodyW,hh+(arrowBodyH/2)].join(','),
+						[w+hh+arrowBodyW,hh-(arrowBodyH/2)].join(','),
+						[w+hh,hh-(arrowBodyH/2)].join(',')];
 
-	function upgrade(selection,pointLeft) {
-		console.log(pointLeft);
+	function upgrade(selection,pointLeft,upgradeName,upgradeDescription) {
 		//	Main popup body
 		selection.append("polygon")
 			.attr("points", function() {
@@ -241,8 +282,8 @@ function skillUpgrades() {
 				return body;
 			})
 			.attr("fill", "#010d0b")
-			.attr("fill-opacity", 0.9)
-			.attr("class", "text-area");
+			.attr("fill-opacity", 0.6)
+			.classed("text-area", true);
 
 		//	Square around arrow
 		selection.append("polygon")
@@ -251,7 +292,8 @@ function skillUpgrades() {
 				return rhomb;
 			})
 			.attr("fill", "#010d0b")
-			.attr("class", "rhomb");
+			.attr("fill-opacity", 0.8)
+			.classed("rhomb", true);
 
 		//	Arrow
 		selection.append("polygon")
@@ -260,18 +302,44 @@ function skillUpgrades() {
 				return arrow;
 			})
 			.attr("fill", "#01bfa6")
-			.attr("class", "arrow");
+			.attr("fill-opacity", 0.8)
+			.classed("arrow");
+
+		var upgradeText = selection.append("text")
+			.attr("x", function() {
+				var xPos = (pointLeft) ? hh : h;
+				return xPos+15;
+			})
+			.attr("y", 26);
+
+		upgradeText.append("tspan")
+			.attr("dy", "0.2em")
+			.classed("upgradeName", true)
+			.text(upgradeName);
+
+		upgradeText.selectAll("tspan.upgradeDescription")
+			.data(upgradeDescription).enter()
+			.append("tspan")
+			.attr("x", function(d) {
+				var xPos = (pointLeft) ? hh : h;
+				return (d.slice(0,7) === "&#8226;") ? xPos+15 : xPos+26;
+			})
+			.attr("dy", "1.2em")
+			.classed("upgradeDescription", true)
+			.html(function(d) {
+				return d;
+			});
 	}
 
 	var upgradePositions = {
 		"l" : {
-			"x" : 75.927,
-			"y" : 146.795,
+			"x" : 115,
+			"y" : 148.2,
 			"pointLeft" : true
 		},
 		"r" : {
-			"x" : 967.87,
-			"y" : 146.795,
+			"x" : 975.71,
+			"y" : 148.2,
 			"pointLeft" : false
 		},
 		"ll" : {
@@ -280,36 +348,60 @@ function skillUpgrades() {
 			"pointLeft" : true
 		},
 		"lr" : {
-			"x" : 891.943,
+			"x" : 860.71,
 			"y" : 0,
 			"pointLeft" : false
 		},
 		"rl" : {
-			"x" : 79.857,
+			"x" : 229.987,
 			"y" : 0,
 			"pointLeft" : true
 		},
 		"rr" : {
-			"x" : 971.8,
+			"x" : 1090.7,
 			"y" : 0,
 			"pointLeft" : false
 		}
-	}
+	};
+
+	var passivePositions = [
+
+	]
 
 	var svg = d3.select("#skill-upgrades")
 		.append("svg")
-		.attr("width", "100%")
-		.attr("height", "100%")
+		.attr("width", 1858.56)
+		.attr("height", 314.28)
 		.attr("display", "block");
 
 	d3.json("/heroes?name=pakko", function(error, data) {
-		svg.selectAll("g.upgrade-tree")
+		var tree = svg.selectAll("g.upgrade-tree")
 			.data(data["skill-upgrades"])
 			.enter().append("g")
 			.attr("class", function(d) {
-				return d[0].id + " upgrade-tree";
+				return d[0].id + "-upgrade-tree";
 			})
-			.selectAll("g.upgrade")
+			.classed("invisible", true);
+
+		tree.append("circle")
+			.attr("cx", 814.284)
+			.attr("cy", hh)
+			.attr("r", 26.786)
+			.attr("fill", "#01bfa6");
+
+		tree.append("circle")
+			.attr("cx", 1044.27)
+			.attr("cy", hh)
+			.attr("r", 26.786)
+			.attr("fill", "#01bfa6");
+
+		tree.append("circle")
+			.attr("cx", 929.28)
+			.attr("cy", 148.2+hh)
+			.attr("r", 26.786)
+			.attr("fill", "#01bfa6");
+
+		tree.selectAll("g.upgrade")
 			.data(function(d) {return d;})
 			.enter().append("g")
 			.attr("width", h + w)
@@ -318,8 +410,23 @@ function skillUpgrades() {
 				return "translate(" + upgradePositions[d.position].x + " " + upgradePositions[d.position].y + ")";
 			})
 			.each(function(d) {
-				console.log(d.position);
-				upgrade(d3.select(this), upgradePositions[d.position].pointLeft);
+				upgrade(d3.select(this), upgradePositions[d.position].pointLeft, d.name, d.description);
+			});
+
+		var passives = svg.append("g")
+			.classed("passive-upgrade-tree", true)
+			.classed("invisible", true)
+			.selectAll("g.passive-upgrade")
+			.data(data["passives"])
+			.enter().append("g")
+			.classed("passive-upgrade", true)
+			.attr("width", h + w)
+			.attr("height", h)
+			.attr("transform", function(d, i) {
+				return "translate(545.352 " + ((h + 4) * i) + ")";
+			})
+			.each(function(d) {
+				upgrade(d3.select(this), false, d.name, d.description);
 			});
 	});
 }

@@ -2,6 +2,20 @@ body {
 	background-color: grey
 }
 
+.invisible {
+	opacity: 0;
+}
+
+.upgradeName {
+	fill: #01bfa6;
+	font-size: 20px;
+}
+
+.upgradeDescription {
+	fill: #fff;
+	font-size: 18px;
+}
+
 #ui {
 	position: absolute;
 	width: 100%;
@@ -42,9 +56,9 @@ body {
 #skill-upgrades {
 	background: lightblue;
 	position: absolute;
-	width: 96%;
-	height: 27.7%;
+	width: 1858.56;
+	height: 314.28;
 	bottom: 217.1px;
 	left: 50%;
-	margin-left: -48%;
+	margin-left: -929.28px;
 }
