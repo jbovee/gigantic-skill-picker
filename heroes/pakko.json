@@ -4,27 +4,38 @@
 		{
 			"id" : "lmb",
 			"name" : "FROSTY SWIPES",
-			"description" : "[LMB]: Melee attack combo"
+			"description" : [
+				"[LMB]: Melee attack combo"
+			]
 		},
 		{
 			"id" : "rmb",
 			"name" : "SNOWBALL TOSS",
-			"description" : "[RMB]: Throw snowball that explodes upon hitting the ground. Inflicts stun and freeze. HOLD [RMB] to charge."
+			"description" : [
+				"[RMB]: Throw snowball that explodes upon hitting the ground. Inflicts stun and freeze. HOLD [RMB] to charge."
+			]
 		},
 		{
 			"id" : "focus",
 			"name" : "BREATH OF FRIGID AIR",
-			"description" : "[F],[LMB]: Inflicts full freeze. On end, turns enemies into snowmen for 4s. Breaking them out deals damage (300/400/500)."
+			"description" : [
+				"[F],[LMB]: Inflicts full freeze. On end, turns enemies into snowmen for 4s. Breaking them out deals damage (300/400/500)."
+			]
 		},
 		{
 			"id" : "q",
 			"name" : "SLIP AND SLIDE",
-			"description" : "[Q]: Slide along the ground.\n[Q],[Q]: Perform melee hit that pushes enemies."
+			"description" : [
+				"[Q]: Slide along the ground.",
+				"[Q],[Q]: Perform melee hit that pushes enemies."
+			]
 		},
 		{
 			"id" : "e",
 			"name" : "FROST PATH",
-			"description" : "[E]: Create a path of ice in front of you that inflicts freeze. Grants speed boost to allies."
+			"description" : [
+				"[E]: Create a path of ice in front of you that inflicts freeze. Grants speed boost to allies."
+			]
 		}
 	],
 	"skill-upgrades" : [
@@ -33,37 +44,49 @@
 				"id" : "lmb",
 				"position" : "l",
 				"name" : "Defensive Swings",
-				"description" : "+5 armor for each successful hit. (Lasts 3s, maximum +20 armor)"
+				"description" : [
+					"&#8226; +5 armor for each successful hit. (Lasts 3s, maximum +20 armor)"
+				]
 			},
 			{
 				"id" : "lmb",
 				"position" : "r",
 				"name" : "Cold Kit Combo",
-				"description" : "After using any other skill, the first hit deals +50% damage. (Within 3s)"
+				"description" : [
+					"&#8226; After using any other skill, the first hit deals +50% damage. (Within 3s)"
+				]
 			},
 			{
 				"id" : "lmb",
 				"position" : "ll",
 				"name" : "Cold and Frail",
-				"description" : "Hitting Frozen enemies weakens them. (-25% damage, 2s)"
+				"description" : [
+					"&#8226; Hitting Frozen enemies weakens them. (-25% damage, 2s)"
+				]
 			},
 			{
 				"id" : "lmb",
 				"position" : "lr",
 				"name" : "Cold Remedy",
-				"description" : "Hitting frozen enemies heals you. (40 HP/s, stacks at 100% with other heals)"
+				"description" : [
+					"&#8226; Hitting frozen enemies heals you. (40 HP/s, stacks at 100% with other heals)"
+				]
 			},
 			{
 				"id" : "lmb",
 				"position" : "rl",
 				"name" : "Extra Sauce",
-				"description" : "Deals +100% damage against frozen enemies."
+				"description" : [
+					"&#8226; Deals +100% damage against frozen enemies."
+				]
 			},
 			{
 				"id" : "lmb",
 				"position" : "rr",
 				"name" : "Ice Breaker",
-				"description" : "Cracks armor against frozen enemies. (-10 armor, 3s)"
+				"description" : [
+					"&#8226; Cracks armor against frozen enemies. (-10 armor, 3s)"
+				]
 			}
 		],
 		[
@@ -71,37 +94,51 @@
 				"id" : "rmb",
 				"position" : "l",
 				"name" : "Stick it to 'Em",
-				"description" : "Direct hits stick to enemies, deal +100 damage upon impact, and explode twice as fast."
+				"description" : [
+					"&#8226; Direct hits stick to enemies, deal +100 damage upon impact, and",
+					"explode twice as fast."
+				]
 			},
 			{
 				"id" : "rmb",
 				"position" : "r",
 				"name" : "Size Matters",
-				"description" : "If fully charged, affects a bigger radius."
+				"description" : [
+					"&#8226; If fully charged, affects a bigger radius."
+				]
 			},
 			{
 				"id" : "rmb",
 				"position" : "ll",
 				"name" : "Shattered",
-				"description" : "Direct hits explode immediately on impact and give 3x the Focus."
+				"description" : [
+					"&#8226; Direct hits explode immediately on impact and give 3x the Focus."
+				]
 			},
 			{
 				"id" : "rmb",
 				"position" : "lr",
 				"name" : "Ice Ball",
-				"description" : "Direct hits freeze enemies for longer on explosion. (4s)"
+				"description" : [
+					"&#8226; Direct hits freeze enemies for longer on explosion. (4s)"
+				]
 			},
 			{
 				"id" : "rmb",
 				"position" : "rl",
 				"name" : "Let's Chill Together",
-				"description" : "If fully charged, damage is increased for each enemy hit. (+60 per enemy, max +120)"
+				"description" : [
+					"&#8226; If fully charged, damage is increased for each enemy hit.",
+					"(+60 per enemy, max +120)"
+				]
 			},
 			{
 				"id" : "rmb",
 				"position" : "rr",
 				"name" : "Group Benefits",
-				"description" : "If fully charged, cooldown is reduce by 1s for each enemy hit."
+				"description" : [
+					"&#8226; If fully charged, cooldown is reduce by 1s for each enemy hit."
+				]
 			}
 		],
 		[
@@ -109,37 +146,50 @@
 				"id" : "focus",
 				"position" : "l",
 				"name" : "Tactical Awareness",
-				"description" : "+10 back damage reduction. +10% damage from behind."
+				"description" : [
+					"&#8226; +10 back damage reduction. +10% damage from behind."
+				]
 			},
 			{
 				"id" : "focus",
 				"position" : "r",
 				"name" : "Frozen Focus",
-				"description" : "Gain additional Focus whenever you freeze an enemy. (Once every 5s)"
+				"description" : [
+					"&#8226; Gain additional Focus whenever you freeze an enemy. (Once every 5s)"
+				]
 			},
 			{
 				"id" : "focus",
 				"position" : "ll",
 				"name" : "Pure Escapism",
-				"description" : "Lose debuffs when you dodge. (Once every 20s)"
+				"description" : [
+					"&#8226; Lose debuffs when you dodge. (Once every 20s)"
+				]
 			},
 			{
 				"id" : "focus",
 				"position" : "lr",
 				"name" : "Bloody Minded",
-				"description" : "Immunity to weakness. Recover from daze twice as fast."
+				"description" : [
+					"&#8226; Immunity to weakness. Recover from daze twice as fast."
+				]
 			},
 			{
 				"id" : "focus",
 				"position" : "rl",
 				"name" : "Hardy",
-				"description" : "25% degen resistance\n[F]: 50% degen resistance after using FOCUS. (Lasts until you die)"
+				"description" : [
+					"&#8226; 25% degen resistance",
+					"&#8226; [F]: 50% degen resistance after using FOCUS. (Lasts until you die)"
+				]
 			},
 			{
 				"id" : "focus",
 				"position" : "rr",
 				"name" : "Feeling Better",
-				"description" : "While using FOCUS, gain health over time. (150 HP/s)"
+				"description" : [
+					"&#8226; While using FOCUS, gain health over time. (150 HP/s)"
+				]
 			}
 		],
 		[
@@ -147,37 +197,51 @@
 				"id" : "q",
 				"position" : "l",
 				"name" : "Safety First",
-				"description" : "While sliding, gain health over time. (60 HP/s)"
+				"description" : [
+					"&#8226; While sliding, gain health over time. (60 HP/s)"
+				]
 			},
 			{
 				"id" : "q",
 				"position" : "r",
 				"name" : "Snow Bowling",
-				"description" : "Roll forward in a snowball. [Q] AGAIN: explode, deal area damage and freeze foes. (2s)\nReduced speed. No longer pushes."
+				"description" : [
+					"&#8226; Roll forward in a snowball. [Q] AGAIN: explode, deal area damage",
+					"and freeze foes. (2s)",
+					"&#8226; Reduced speed. No longer pushes."
+				]
 			},
 			{
 				"id" : "q",
 				"position" : "ll",
 				"name" : "Stay Healthy",
-				"description" : "Hitting an enemy increases and extends the health gain. (100 HP/s, 2s)"
+				"description" : [
+					"&#8226; Hitting an enemy increases and extends the health gain. (100 HP/s, 2s)"
+				]
 			},
 			{
 				"id" : "q",
 				"position" : "lr",
 				"name" : "Uninhibited",
-				"description" : "Gain +25 armor and become immune to slow, cripple, and immobilize while sliding."
+				"description" : [
+					"&#8226; Gain +25 armor and become immune to slow, cripple, and immobilize while sliding."
+				]
 			},
 			{
 				"id" : "q",
 				"position" : "rl",
 				"name" : "Forcefull Impact",
-				"description" : "[Q],[Q]: Dazes enemies on hit."
+				"description" : [
+					"&#8226; [Q],[Q]: Dazes enemies on hit."
+				]
 			},
 			{
 				"id" : "q",
 				"position" : "rr",
 				"name" : "Play Nice",
-				"description" : "[Q],[Q]: Weakens enemies on hit. (-25% damage, 3s)"
+				"description" : [
+					"&#8226; [Q],[Q]: Weakens enemies on hit. (-25% damage, 3s)"
+				]
 			}
 		],
 		[
@@ -185,52 +249,73 @@
 				"id" : "e",
 				"position" : "l",
 				"name" : "Extended Path",
-				"description" : "Path extends further."
+				"description" : [
+					"&#8226; Path extends further."
+				]
 			},
 			{
 				"id" : "e",
 				"position" : "r",
 				"name" : "Frostbite",
-				"description" : "Freeze strength is intensified over time."
+				"description" : [
+					"&#8226; Freeze strength is intensified over time."
+				]
 			},
 			{
 				"id" : "e",
 				"position" : "ll",
 				"name" : "A Slippery Slope",
-				"description" : "Allies move faster when on the path."
+				"description" : [
+					"&#8226; Allies move faster when on the path."
+				]
 			},
 			{
 				"id" : "e",
 				"position" : "lr",
 				"name" : "Path of Destruction",
-				"description" : "Allies gain +15% basic attack damage when on the path."
+				"description" : [
+					"&#8226; Allies gain +15% basic attack damage when on the path."
+				]
 			},
 			{
 				"id" : "e",
 				"position" : "rl",
 				"name" : "Flash Freeze",
-				"description" : "Frostbite happens faster."
+				"description" : [
+					"&#8226; Frostbite happens faster."
+				]
 			},
 			{
 				"id" : "e",
 				"position" : "rr",
 				"name" : "Redistribution of Health",
-				"description" : "If an enemy is on your path, you are healed for 75 HP/s."
+				"description" : [
+					"&#8226; If an enemy is on your path, you are healed for 75 HP/s."
+				]
 			}
 		]
 	],
 	"passives" : [
 		{
 			"name" : "Fastball",
-			"description" : "[RMB]: SNOWBALL TOSS travels faster and further.\nDURING CLASH: With full health, cooldown is reduced by 8s."
+			"description" : [
+				"&#8226; [RMB]: SNOWBALL TOSS travels faster and further.",
+				"&#8226; DURING CLASH: With full health, cooldown is reduced by 8s."
+			]
 		},
 		{
 			"name" : "Let It Slide",
-			"description" : "[Q]: can slide longer before attacking.\nDURING CLASH: Gain Focus when sliding."
+			"description" : [
+				"&#8226; [Q]: can slide longer before attacking.",
+				"&#8226; DURING CLASH: Gain Focus when sliding."
+			]
 		},
 		{
 			"name" : "Lingering Effects",
-			"description" : "[E]: Speed boost and freeze last an extra 1s.\nDURING CLASH: Extra duration increased to 2s."
+			"description" : [
+				"&#8226; [E]: Speed boost and freeze last an extra 1s.",
+				"&#8226; DURING CLASH: Extra duration increased to 2s."
+			]
 		}
 	]
 }
